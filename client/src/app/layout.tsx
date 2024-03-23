@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-const inter = Inter({ subsets: ["latin"] });
+const Poppinss = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Organic Website",
@@ -17,10 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header/>
-        {children}
-        <Footer/>
+      <body className={Poppinss.className}>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-grow w-[1200px] mx-auto"> {children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
