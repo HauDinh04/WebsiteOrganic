@@ -23,7 +23,7 @@ const Signin = () => {
       <div className="w-[420px] h-full relative justify-center">
         <Link href={"/"}>
           <div className="text-[10px] text-center  text-[#65B741]  absolute top-[20px] right-[21px] ">
-            Trở về trang chủ
+            - Trở về trang chủ
           </div>
         </Link>
         <div className="text-[24px] text-center  text-[#65B741]  absolute top-[80px] left-[177px] font-semibold">
@@ -33,18 +33,19 @@ const Signin = () => {
           <input
             type="text"
             placeholder="Email ..."
-            className="w-[300px] h-[40px] leading-[40px] border border-[#65B741] rounded-[10px] pl-[15px] absolute top-[164px]"
-          />{" "}
+            className="w-[300px] h-[40px] leading-[40px] border border-[#65B741] rounded-[10px] pl-[15px] absolute top-[164px] outline-none"
+          />
           <br />
           <input
             type="text"
             placeholder="Password ..."
-            className="w-[300px] h-[40px] leading-[40px] border border-[#65B741] rounded-[10px]  pl-[15px] absolute top-[231px] "
+            className="w-[300px] h-[40px] leading-[40px] border border-[#65B741] rounded-[10px]  pl-[15px] absolute top-[231px] outline-none "
           />
         </form>
-        <div className="text-[12px] text-center  text-[#65B741]  absolute top-[280px] right-[60px] ">
+        <Link href={'/'}><div className="text-[12px] text-center  text-[#65B741]  absolute top-[280px] right-[60px] ">
           Forgot password?
-        </div>
+        </div></Link>
+        
         <button className="text-white w-[150px] h-[50px] rounded-[50px] shadow bg-[#65B741] absolute bottom-[54px] left-[135px]">
           SIGN IN
         </button>
