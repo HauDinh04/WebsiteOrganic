@@ -44,31 +44,25 @@ export default function Home() {
               <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
               <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
               <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 text-xs font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
             </div>
             <div className="w-60 h-[360px] pt-[10px]">
               <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
               <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
               <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 text-xs font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
             </div>
             <div className="w-60 h-[360px] pt-[10px]">
               <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
               <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
               <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 text-xs font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
             </div>
             <div className="w-60 h-[360px] pt-[10px]">
               <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
               <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
               <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 text-xs font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
-            </div>
-            <div className="w-60 h-[360px] pt-[10px]">
-              <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
-              <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
-              <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 text-xs font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
             </div>
           </div>
         </div>
