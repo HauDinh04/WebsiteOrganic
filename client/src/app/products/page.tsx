@@ -1,176 +1,234 @@
 import Image from "next/image"
-import { Slider } from "@/components/ui/slider"
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
+import Link from "next/link";
+
+
+
 const Products = () => {
     return (
-        <div className="w-full bg-zinc-100 pt-5 pb-10">
-            <Image className="mx-auto rounded-xl relative" src={"/images/banner/banner-detail.png"} width={1440} height={176} alt="banner-detail"></Image>
-            <p className="w-[1440px] h-12 mx-auto text-center text-white text-[40px] font-black font-['Inter'] absolute top-[240px] ">Shop</p>
-            <div className="w-[1200px] mx-auto pt-[50px]">
-                <div className="w-[1200px] h-[110px] flex justify-between">
-                  <div className="w-[310px] h-[60px] flex items-center">
-                    <input className="w-[260px] h-[60px] rounded-tl-[10px] rounded-bl-[10px] pl-[15px]" type="text" placeholder="Product name" />
-                    <button className="w-[50px] h-[60px] bg-zinc-300 rounded-tr-[10px] rounded-br-[10px]"><Image className="mx-auto" src={"/images/icons/icon-search.png"} width={20} height={20} alt="icon-search"></Image></button>
+        <div className="w-full pt-5 pb-10">
+            <div className="w-[1440px] mx-auto rounded-xl relative">
+              <Image className="mx-auto rounded-xl" src={"/images/banner/banner.png"} width={1440} height={176} alt="banner"></Image>
+              <div className="absolute text-white top-8 left-[650px]"><Link className="mx-2.5" href={"/"}>Home</Link>/<Link className="mx-2.5" href={"/products"}>Shop</Link></div>
+            </div>
+            <div className="w-[1200px] mx-auto mt-10 flex justify-between">
+              <div className="w-[300px]">
+                <p className="text-zinc-800 text-base font-semibold font-['Poppins'] leading-none tracking-wide mb-[20px]">Filter</p>
+                <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">22 products</p>
+                <div className="w-[300px] mt-[30px] py-[30px] border-t border-neutral-200">
+                  <p className="text-zinc-800 text-base font-semibold font-['Poppins'] leading-none tracking-wide mb-[20px]">Price</p>
+                  <div className="w-[300px] ">
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="checkbox" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Từ 0đ - 50.000đ</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
+                    </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="checkbox" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Từ 50.000đ - 100.000đ</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
+                    </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="checkbox" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Từ 100.000đ - 250.000đ</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
+                    </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="checkbox" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Từ 250.000đ - 500.000đ</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
+                    </div>
                   </div>
-                  <div className="w-[306px] h-[60px] bg-zinc-300 rounded-[10px] flex items-center justify-around">
-                    <p className="w-[120px] h-[30px] text-gray-500 text-base font-medium font-['Inter']">Default Sorting:</p>
-                      <select className="" id="">
-                        <option value="1">Nothing</option>
-                        <option value="2">Popularity</option>
-                        <option value="3">Latest</option>
-                        <option value="4">Oldest</option>
-                      </select>
-                  </div>                    
                 </div>
-                <div className="w-[1200px] flex justify-between">
+                <div className="w-[300px] mt-[30px] py-[30px] border-t border-neutral-200">
+                  <p className="text-zinc-800 text-base font-semibold font-['Poppins'] leading-none tracking-wide mb-[20px]">Material</p>
                   <div className="w-[300px]">
-                    <div className="w-[300px] h-[100px]">
-                      <p className="w-[300px] h-[30px] text-gray-600 text-2xl font-medium mb-2.5">Price</p>
-                      <div className="w-[300px] h-2.5 mb-2.5">
-                      <Slider defaultValue={[33]} max={100} step={1} />
-                      </div>
-                      <p className="w-2.5 h-6 text-gray-500 text-base font-medium font-['Inter']">0</p>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Import</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
                     </div>
-                    <div className="w-[300px]">
-                      <p className="w-[300px] h-[30px] text-gray-600 text-2xl font-medium mb-2.5">Category</p>
-                      <div className="w-[300px]">
-                        <div className="w-[300px] h-6 mb-[5px] flex items-center">
-                          <input className="w-6 h-6" type="checkbox" name="" id="" />
-                          <label className="w-[60px] h-6 text-gray-600 text-base font-medium font-['Inter'] ml-[14px]" htmlFor="">cate1</label>
-                        </div>
-                        <div className="w-[300px] h-6 mb-[5px] flex items-center">
-                          <input className="w-6 h-6" type="checkbox" name="" id="" />
-                          <label className="w-[60px] h-6 text-gray-600 text-base font-medium font-['Inter'] ml-[14px]" htmlFor="">cate2</label>
-                        </div>
-                        <div className="w-[300px] h-6 mb-[5px] flex items-center">
-                          <input className="w-6 h-6" type="checkbox" name="" id="" />
-                          <label className="w-[60px] h-6 text-gray-600 text-base font-medium font-['Inter'] ml-[14px]" htmlFor="">cate3</label>
-                        </div>
-                        <div className="w-[300px] h-6 mb-[5px] flex items-center">
-                          <input className="w-6 h-6" type="checkbox" name="" id="" />
-                          <label className="w-[60px] h-6 text-gray-600 text-base font-medium font-['Inter'] ml-[14px]" htmlFor="">cate4</label>
-                        </div>
-                        <div className="w-[300px] h-6 mb-[5px] flex items-center">
-                          <input className="w-6 h-6" type="checkbox" name="" id="" />
-                          <label className="w-[60px] h-6 text-gray-600 text-base font-medium font-['Inter'] ml-[14px]" htmlFor="">cate5</label>
-                        </div>
-                        <div className="w-[300px] h-6 mb-[5px] flex items-center">
-                          <input className="w-6 h-6" type="checkbox" name="" id="" />
-                          <label className="w-[60px] h-6 text-gray-600 text-base font-medium font-['Inter'] ml-[14px]" htmlFor="">cate6</label>
-                        </div>
-                      </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Domestic</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
                     </div>
                   </div>
-                  <div className="w-[900] px-[50px] flex justify-between flex-wrap">
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
+                </div>
+                <div className="w-[300px] mt-[30px] py-[30px] border-t border-neutral-200">
+                  <p className="text-zinc-800 text-base font-semibold font-['Poppins'] leading-none tracking-wide mb-[20px]">Categories</p>
+                  <div className="w-[300px]">
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Vegetable</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
                     </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Fruits</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
                     </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Meat</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
                     </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
-                    </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
-                    </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
-                    </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
-                    </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
-                    </div>
-                    <div className="w-60 h-[360px] mb-10 relative">
-                      <Image src={"/images/products/product2.png"} width={240} height={276} alt="product"></Image>
-                      <p className="h-[20px] text-center text-black text-base font-bold font-['Inter'] absolute bottom-[100px] left-[80px]">Rau Súp Lơ</p>
-                      <div className="h-[84px] flex items-center justify-around">
-                        <p className="w-[82px] h-[21px] text-center text-black text-sm font-semibold font-['Inter']">38.000 vnđ</p>
-                        <button className="w-[83px] h-9 bg-lime-600 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Mua Ngay</button>
-                      </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Fish</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
                     </div>
                   </div>
+                </div>
+                <div className="w-[300px] mt-[30px] py-[30px] border-t border-neutral-200">
+                  <p className="text-zinc-800 text-base font-semibold font-['Poppins'] leading-none tracking-wide mb-[20px]">Availability</p>
+                  <div className="w-[300px]">
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">In stock</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
+                    </div>
+                    <div className="w-[300px] flex justify-between items-center mb-[15px]">
+                      <input className="w-[17px] h-[17px] bg-white border border-neutral-200" type="radio" name="" id="" />
+                      <label className="w-[237px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" htmlFor="">Sold out</label>
+                      <p className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">(19)</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[300px] h-[343px]">
+                  <Image src={"/images/banner/banner-shop2.png"} width={300} height={343} alt="banner-shop"></Image>
+                </div>
               </div>
-              <div className="w-[500px] ml-[740px]">
-              <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" isActive>
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href="#" />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+              <div className="w-[860px]">
+                <Image src={"/images/banner/banner-shop1.png"} width={860} height={249} alt="banner-shop"></Image>
+                <div className="w-[860px] h-[52px] my-[30px] border-b border-neutral-200 flex justify-end">
+                  <p className="text-zinc-800 font-semibold font-['Poppins'] leading-[14px] tracking-wide">Sort by: <select className="w-[200px] h-[21px] text-neutral-500 font-normal font-['Poppins'] tracking-wide" name="" id="">
+                                <option value="">Nothing</option>
+                                <option value="">Popularity</option>
+                                <option value="">Latest</option>
+                                <option value="">Oldest</option>
+                              </select>
+                  </p>
+                </div>
+                <div className="w-[860px] flex flex-wrap justify-between">
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
                   </div>
-            </div>    
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                  <div className="w-[232px] pb-[30px] relative">
+                    <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+                    <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+                    <div className="w-[232px] flex justify-around items-center">
+                      <div>
+                        <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                        <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                        <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                      </div>
+                      <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[860px] flex items-center justify-center">
+                  <ul className="flex">
+                    <button className="w-[30px] h-[30px] mx-[5px] rotate-180"><Image src={"/images/icons/icon-next.png"} width={30} height={30} alt="icon"></Image></button>
+                    <li className="w-[30px] h-[30px] mx-[5px] bg-amber-400 text-white rounded-[3px] shadow justify-center items-center inline-flex cursor-pointer">1</li>
+                    <li className="w-[30px] h-[30px] mx-[5px] bg-white rounded-[3px] shadow justify-center items-center inline-flex cursor-pointer">2</li>
+                    <button className="w-[30px] h-[30px] mx-[5px]"><Image src={"/images/icons/icon-next.png"} width={30} height={30} alt="icon"></Image></button>
+                  </ul>
+                </div>
+              </div>
+            </div>
         </div>
       );
 }
