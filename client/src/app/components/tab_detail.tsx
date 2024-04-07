@@ -64,10 +64,6 @@ const Tab_detail: React.FC = () => (
         </Tabs.TabPane>
         
      </Tabs>
-    // <Tabs
-    // defaultActiveKey="1"
-    // centered
-    // />
 );
 
 export default Tab_detail;
