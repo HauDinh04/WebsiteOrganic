@@ -1,18 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
+import Tab from "@/app/components/tab_detail";
 
 const Detail = () => {
   return (
-    <div className="w-full bg-zinc-100 pt-5 pb-10">
-      <Image className="mx-auto rounded-xl relative" src={"/images/banner/banner-detail.png"} width={1440} height={176} alt="banner-detail"></Image>
-      <p className="w-[1440px] h-12 mx-auto text-center text-white text-[40px] font-black font-['Inter'] absolute top-[240px] left-[80px]">Shop Detail</p>
+    <div className="w-full pt-5 pb-10">
+      <div className="w-[1440px] mx-auto rounded-xl relative">
+        <Image className="mx-auto rounded-xl" src={"/images/banner/banner.png"} width={1440} height={176} alt="banner"></Image>
+        <div className="absolute text-white top-8 left-[650px]"><Link className="mx-2.5" href={"/"}>Home</Link>/<Link className="mx-2.5" href={"/products"}>Shop</Link></div>
+      </div>
       <div className="w-[1200px] mx-auto pt-[50px]">
-        <div className="w-[1200px] flex">
-          <div className="w-[900px] flex flex-wrap">
-            <Image className="w-[430px] h-[430px] rounded-[10px] border border-zinc-200 mx-[10px]" src={"/images/products/product2.jpg"} width={430} height={430} alt="product"></Image>
-            <div className="w-[450px]">
-              <p className="w-[450px] h-[30px] mb-2.5 text-gray-600 text-2xl font-extrabold font-['Inter']">Brocoli</p>
-              <p className="w-[450px] h-6 mb-2.5 text-gray-500 text-base font-normal font-['Inter']">Category: Vegetables</p>
-              <p className="w-[450px] h-[30px] mb-2.5 text-gray-600 text-2xl font-bold font-['Inika']">3,35 $</p>
+        <div className="w-[1200px] flex justify-between">
+            <Image className="w-[420px] h-[580px] rounded-[10px] border border-zinc-200 mx-[10px]" src={"/images/products/product3.png"} width={420} height={580} alt="product"></Image>
+            <div className="w-[420px]">
+              <p className="w-[420px] h-[50px] pb-5 mb-2.5 text-zinc-800 text-lg font-semibold font-['Poppins'] tracking-wide border-b border-gray-200">Fresh mussel (500g)</p>
+              <p className="text-zinc-800 text-base font-semibold font-['Poppins'] tracking-wide my-[15px]">SKU: <span className="text-neutral-500 font-normal font-['Poppins'] leading-[14px] tracking-wide">123456</span></p>
+              <p className="w-[420px] h-6 mb-2.5 text-zinc-800 text-base font-semibold font-['Poppins'] tracking-wide">Availability: <span className="text-neutral-500 text-sm font-normal font-['Poppins'] tracking-wide">41 in stock</span></p>
+              <p className="w-[420px] h-5 mb-2.5 text-zinc-800 text-sm font-semibold font-['Poppins'] tracking-wide">3,35 $<span className="ml-[15px] text-neutral-500 text-sm font-normal font-['Poppins'] line-through tracking-wide">3,35 $</span></p>
               <div className="flex flex-col">
                 <div className="overflow-x-auto">
                   <div className="inline-block min-w-full">
@@ -65,14 +69,59 @@ const Detail = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[100px] h-[30px] my-[10px] flex justify-between">
-                <button className="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full"><Image src={"/images/icons/icon-minus.png"} width={24} height={24} alt="minus"></Image></button>
-                <input className="w-[34px] h-[30px] text-center text-gray-500 text-xl font-semibold font-['Inter']" type="number" data-input-counter aria-describedby="helper-text-explanation" min={1} />
-                <button className="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full"><Image src={"/images/icons/icon-plus.png"} width={24} height={24} alt="plus"></Image></button>
+              <div className="w-[200px] h-[40px] my-[30px] flex justify-between ">
+                <p className="text-zinc-800 text-base font-medium font-['Poppins'] tracking-wide pt-2">Quantity:</p>
+                <div className="w-[112px] h-[40px] flex items-center justify-center border border-black border-opacity-10">
+                  <button className="w-[30px] h-[38px] flex-col justify-center items-center inline-flex"><span className="w-[14px] h-[33px] text-center text-zinc-800 text-2xl font-normal font-['Poppins']">-</span></button>
+                  <input className="w-[50px] h-[21px] pb-px justify-center items-center inline-flex text-center text-black text-sm font-normal font-['Poppins']" type="number" id="number-input" min={"1"} defaultValue={"1"} aria-describedby="helper-text-explanation" required/>
+                  <button className="w-[30px] h-[38px] flex-col justify-center items-center inline-flex"><span className="w-[14px] h-[33px] text-center text-zinc-800 text-2xl font-normal font-['Poppins']">+</span></button>
+                </div>
               </div>
-              <button className="w-40 h-10 rounded-[50px] border border-orange-400 text-lime-600 text-sm font-bold font-['Inter'] flex items-center"><Image className="mx-[10px]" src={"/images/icons/icon-cart.png"} width={16} height={16} alt="cart"></Image> Thêm giỏ hàng</button>
+              <div className="w-[210] h-[45px] flex justify-between">
+                <button className="w-[200px] h-[45px] rounded-[50px] bg-amber-400 justify-center items-center inline-flex text-center text-white text-sm font-normal font-['Poppins']"> Thêm giỏ hàng</button>
+                <button className="w-[200px] h-[45px] rounded-[50px] bg-zinc-800 justify-center items-center inline-flex text-center text-white text-sm font-normal font-['Poppins']"> Mua Ngay</button>
+              </div>
+              <div className="w-[80px] h-5 flex justify-between my-[15px]">
+                <Image src={"/images/icons/icon-heart.png"} width={20} height={18} alt="icon"></Image>
+                <p className="h-5 text-center text-zinc-800 text-sm font-medium font-['Poppins']">Wishlist</p>
+              </div>
+              <div className="w-[240px] h-[24px] flex justify-between">
+                <Image src={"/images/payment1.png"} width={40} height={24} alt="payments"></Image>
+                <Image src={"/images/payment2.png"} width={40} height={24} alt="payments"></Image>
+                <Image src={"/images/payment3.png"} width={40} height={24} alt="payments"></Image>
+                <Image src={"/images/payment4.png"} width={40} height={24} alt="payments"></Image>
+                <Image src={"/images/payment5.png"} width={40} height={24} alt="payments"></Image>
+              </div>
             </div>
-            <div className="w-[900px] my-5 ">
+          <div className="w-[300px]">
+              <div className="w-[300px] h-[225px] mb-[15px] px-[15px] py-[15px] bg-stone-50">
+                <div className="w-[60px] h-[60px] mx-auto bg-white rounded-full px-[17px] py-[17px]">
+                  <Image src={"/images/icons/icon-detail1.png"} width={26} height={26} alt="icon"></Image>
+                </div>
+                <p className="w-[270px] h-[23px] my-[15px] text-center text-zinc-800 text-base font-semibold font-['Poppins'] uppercase tracking-wide">DELIVERY INFO</p>
+                <p className="w-[270px] h-[90px] text-center text-neutral-500 font-normal font-['Poppins'] leading-[30px] tracking-wide">From then, delivery is generally within 2-10 days, depending on your location.</p>
+              </div>
+              <div className="w-[300px] h-[225px] mb-[15px] px-[15px] py-[15px] bg-stone-50">
+                <div className="w-[60px] h-[60px] mx-auto bg-white rounded-full px-[17px] py-[17px]">
+                  <Image src={"/images/icons/icon-detail2.png"} width={26} height={26} alt="icon"></Image>
+                </div>
+                <p className="w-[270px] h-[23px] text-center text-zinc-800 text-base font-semibold font-['Poppins'] uppercase tracking-wide">30 DAYS RETURNS</p>
+                <p className="w-[270px] h-[90px] text-center text-neutral-500 font-normal font-['Poppins'] leading-[30px] tracking-wide">Not the right fit? No worries. We arrange pick up and a full refund within 7 days including the delivery fee.</p>
+              </div>
+              <div className="w-[300px] h-[225px] mb-[15px] px-[15px] py-[15px] bg-stone-50">
+                <div className="w-[60px] h-[60px] mx-auto bg-white rounded-full px-[17px] py-[17px]">
+                  <Image src={"/images/icons/icon-detail3.png"} width={26} height={26} alt="icon"></Image>
+                </div>
+                <p className="w-[270px] h-[23px] my-[15px] text-center text-zinc-800 text-base font-semibold font-['Poppins'] uppercase tracking-wide">10 YEAR WARRANTY</p>
+                <p className="w-[270px] h-[90px] text-center text-neutral-500 font-normal font-['Poppins'] leading-[30px] tracking-wide">Quality comes first and our products are designed to last.</p>
+              </div>
+          </div>
+        </div>
+        {/* Test */}
+          <Tab/>
+        {/* Review */}
+        {/* <div>
+        <div className="w-[900px] my-5 ">
               <div className="w-[900] h-10 border-b border-zinc-200">
                 <p className="w-[120px] h-10 text-center text-gray-600 text-base font-medium font-['Inter']">Description</p>
               </div>
@@ -124,120 +173,76 @@ const Detail = () => {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="w-[290px]">
-            <div className="w-[280px] mx-auto">
-              <h1 className="w-[280px] h-[30px] mb-2.5 text-gray-600 text-2xl font-bold font-['Inter']">Categories</h1>
-              <div className="w-[280px]">
-                <div className="w-[280px] h-10 flex">
-                  <p className="w-[230px] h-10 text-lime-600 flex items-center text-base font-medium font-['Inter']">Category</p>
-                  <p className="w-[50px] h-10 text-center flex items-center text-gray-500 text-base font-normal font-['Inter']">(1)</p>
-                </div>
-                <div className="w-[280px] h-10 flex">
-                  <p className="w-[230px] h-10 text-lime-600 flex items-center text-base font-medium font-['Inter']">Category</p>
-                  <p className="w-[50px] h-10 text-center flex items-center text-gray-500 text-base font-normal font-['Inter']">(1)</p>
-                </div>
-                <div className="w-[280px] h-10 flex">
-                  <p className="w-[230px] h-10 text-lime-600 flex items-center text-base font-medium font-['Inter']">Category</p>
-                  <p className="w-[50px] h-10 text-center flex items-center text-gray-500 text-base font-normal font-['Inter']">(1)</p>
-                </div>
-                <div className="w-[280px] h-10 flex">
-                  <p className="w-[230px] h-10 text-lime-600 flex items-center text-base font-medium font-['Inter']">Category</p>
-                  <p className="w-[50px] h-10 text-center flex items-center text-gray-500 text-base font-normal font-['Inter']">(1)</p>
-                </div>
-                <div className="w-[280px] h-10 flex">
-                  <p className="w-[230px] h-10 text-lime-600 flex items-center text-base font-medium font-['Inter']">Category</p>
-                  <p className="w-[50px] h-10 text-center flex items-center text-gray-500 text-base font-normal font-['Inter']">(1)</p>
-                </div>
-                <div className="w-[280px] h-10 flex">
-                  <p className="w-[230px] h-10 text-lime-600 flex items-center text-base font-medium font-['Inter']">Category</p>
-                  <p className="w-[50px] h-10 text-center flex items-center text-gray-500 text-base font-normal font-['Inter']">(1)</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-[280px] mt-5 mx-auto">
-              <h1 className="w-[280px] h-[30px] mb-2.5 text-gray-600 text-2xl font-bold font-['Inter']">Featured Products</h1>
-              <div className="w-[280px]">
-                <div className="w-[280px] h-[94px] flex">
-                  <Image src={"/images/products/product2.jpg"} width={100} height={94} alt="product"></Image>
-                  <div className="w-[170px] h-[94px]">
-                    <p className="w-[170px] h-5 mb-[7px] text-gray-600 text-base font-semibold font-['Inter']">Brocoli</p>
-                    <p className="w-[170px] h-[30px] mb-[7px] text-gray-600 text-2xl font-bold font-['Inika']">3,35 $</p>
-                    <p className="w-[170px] h-[30px] text-red-500 text-2xl font-bold font-['Inika'] line-through">4,11 $</p>
-                  </div>
-                </div>
-                <div className="w-[280px] h-[94px] flex">
-                  <Image src={"/images/products/product2.jpg"} width={100} height={94} alt="product"></Image>
-                  <div className="w-[170px] h-[94px]">
-                    <p className="w-[170px] h-5 mb-[7px] text-gray-600 text-base font-semibold font-['Inter']">Brocoli</p>
-                    <p className="w-[170px] h-[30px] mb-[7px] text-gray-600 text-2xl font-bold font-['Inika']">3,35 $</p>
-                    <p className="w-[170px] h-[30px] text-red-500 text-2xl font-bold font-['Inika'] line-through">4,11 $</p>
-                  </div>
-                </div>
-                <div className="w-[280px] h-[94px] flex">
-                  <Image src={"/images/products/product2.jpg"} width={100} height={94} alt="product"></Image>
-                  <div className="w-[170px] h-[94px]">
-                    <p className="w-[170px] h-5 mb-[7px] text-gray-600 text-base font-semibold font-['Inter']">Brocoli</p>
-                    <p className="w-[170px] h-[30px] mb-[7px] text-gray-600 text-2xl font-bold font-['Inika']">3,35 $</p>
-                    <p className="w-[170px] h-[30px] text-red-500 text-2xl font-bold font-['Inika'] line-through">4,11 $</p>
-                  </div>
-                </div>
-                <div className="w-[280px] h-[94px] flex">
-                  <Image src={"/images/products/product2.jpg"} width={100} height={94} alt="product"></Image>
-                  <div className="w-[170px] h-[94px]">
-                    <p className="w-[170px] h-5 mb-[7px] text-gray-600 text-base font-semibold font-['Inter']">Brocoli</p>
-                    <p className="w-[170px] h-[30px] mb-[7px] text-gray-600 text-2xl font-bold font-['Inika']">3,35 $</p>
-                    <p className="w-[170px] h-[30px] text-red-500 text-2xl font-bold font-['Inika'] line-through">4,11 $</p>
-                  </div>
-                </div>
-                <div className="w-[280px] h-[94px] flex">
-                  <Image src={"/images/products/product2.jpg"} width={100} height={94} alt="product"></Image>
-                  <div className="w-[170px] h-[94px]">
-                    <p className="w-[170px] h-5 mb-[7px] text-gray-600 text-base font-semibold font-['Inter']">Brocoli</p>
-                    <p className="w-[170px] h-[30px] mb-[7px] text-gray-600 text-2xl font-bold font-['Inika']">3,35 $</p>
-                    <p className="w-[170px] h-[30px] text-red-500 text-2xl font-bold font-['Inika'] line-through">4,11 $</p>
-                  </div>
-                </div>
-                <button className="w-40 h-10 rounded-[50px] border border-orange-400 text-lime-600 text-sm font-bold font-['Inter'] flex items-center justify-center mt-10 mx-auto">View More</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-[1200px] h-[490px] mt-10 pt-10 bg-white ">
+        </div> */}
+        {/* Review */}
+        <div className="w-[1200px] mt-10 pt-10 bg-white ">
           <div className="w-[1200px] h-[50px]">
-            <p className="w-[440px] h-[50px] mx-auto text-center text-black text-[40px] font-bold font-['Inter']">Sản phẩm cùng loại</p>
+            <p className="w-[440px] h-[50px] mx-auto text-center text-black text-[40px] font-bold font-['Inter']">Related Product</p>
           </div>
-          <div className="w-[1200px] h-[360px] flex">
-            <div className="w-60 h-[360px] pt-[10px]">
-              <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
-              <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
-              <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+          <div className="w-[1200px] h-[360px] mt-[40px] flex justify-between">
+            <div className="w-[232px] pb-[30px] relative">
+              <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+              <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+              <div className="w-[232px] flex justify-around items-center">
+                <div>
+                  <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                  <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                  <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                </div>
+                <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+              </div>
             </div>
-            <div className="w-60 h-[360px] pt-[10px]">
-              <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
-              <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
-              <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+            <div className="w-[232px] pb-[30px] relative">
+              <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+              <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+              <div className="w-[232px] flex justify-around items-center">
+                <div>
+                  <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                  <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                  <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                </div>
+                <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+              </div>
             </div>
-            <div className="w-60 h-[360px] pt-[10px]">
-              <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
-              <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
-              <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+            <div className="w-[232px] pb-[30px] relative">
+              <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+              <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+              <div className="w-[232px] flex justify-around items-center">
+                <div>
+                  <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                  <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                  <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                </div>
+                <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+              </div>
             </div>
-            <div className="w-60 h-[360px] pt-[10px]">
-              <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
-              <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
-              <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+            <div className="w-[232px] pb-[30px] relative">
+              <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+              <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+              <div className="w-[232px] flex justify-around items-center">
+                <div>
+                  <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                  <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                  <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                </div>
+                <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+              </div>
             </div>
-            <div className="w-60 h-[360px] pt-[10px]">
-              <Image src={"/images/products/product1.png"} width={240} height={240} alt="product"></Image>
-              <p className="w-[60px] h-5 mt-[10px] mx-auto text-black text-base font-normal font-['Inter']">Bắp cải</p>
-              <p className="w-[60px] h-5 mx-auto mt-[10px] text-lime-600 text-base font-bold font-['Inika']">65,000 <span className="underline">đ</span></p>
-              <div className="w-[110px] h-[30px] mx-auto mt-[10px]"><button className="w-[110px] h-[30px]  bg-lime-600 rounded-[5px] shadow text-center text-neutral-100 font-normal font-['Poppins']">Thêm giỏ hàng</button></div>
+            <div className="w-[232px] pb-[30px] relative">
+              <Image className="mb-[10px]" src={"/images/products/product2.png"} width={232} height={276} alt="products"></Image>
+              <p className="w-[232px] text-center text-black font-bold font-['Inter'] absolute top-[220px]">Bông cải</p>
+              <div className="w-[232px] flex justify-around items-center">
+                <div>
+                  <p className="w-[80px] h-[20px] text-black font-semibold font-['Inter']">38.000 đ</p>
+                  <p className="w-[80px] h-[20px] text-black text-opacity-50 text-[12px] font-semibold font-['Inter'] line-through">38.000 đ</p>
+                  <Image src={"/images/icons/icon-heart.png"} width={20} height={20} alt="icon-heart"></Image>
+                </div>
+                <button className="w-[80px] h-9 bg-lime-600 rounded-[5px] text-center text-xs text-white font-semibold font-['Inter']">Mua Ngay</button>
+              </div>
             </div>
+          </div>
+          <div className="w-[1200px] h-9 mt-10 text-center">
+            <button className="w-[150px] h-9 bg-amber-400 rounded-[5px] text-center text-white text-xs font-semibold font-['Inter']">Xem thêm</button>
           </div>
         </div>
       </div>
@@ -246,4 +251,6 @@ const Detail = () => {
 }
 
 export default Detail;
+
+
 
