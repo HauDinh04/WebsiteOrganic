@@ -1,18 +1,17 @@
-import Image from "next/image";
-
+import Image from 'next/image';
 const About = () => {
-    return (
-        <div className="max-w-[1200px] relative">
-            <div className="block w-[1200px] h-[100px]">
+    return (  
+        <div className="max-w-[1440px] ">
+            <div className=" relative block w-[1200px] h-[100px]">
                 <h1 className="absolute z-[1] top-[25px] left-[45%] text-white">Home / About us</h1>
                 <Image className="absolute z-0"
                     src={"/images/breadcrumb.png"}
                     alt=""
-                    width={1200}
+                    width={1400}
                     height={100}
                 />
             </div>
-            <div className="">
+            <div className="w-[1200px]">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="
                     text-3xl
@@ -66,5 +65,5 @@ const About = () => {
         </div>
     );
 }
-
+ 
 export default About;
